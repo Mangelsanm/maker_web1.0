@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+*{
+	box-sizing: border-box;
+}
+img{
+	display: block;
+	max-width: 100%;
+}
+body{
+	font-family: 'Open Sans', sans-serif;
+	margin: 0; /*por default el navegador agrega un margen, asi que lo eliminamos*/
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	letter-spacing: 1px;
+}
+
+/********************Estilos del header********************/
+.header{
+	height: 60px; /*altura del header*/
+}
+.header .contenedor{ /*contenedor flexible*/
+	display: flex; /*contenedor: elemento padre que contiene los elementos flexibles*/
+	justify-content: space-between; /*coloca cada bloque en un extremo (logo e icono-menu)*/
+}
+.logo, .icon-menu{ /*propiedades para el logo (texto principal) e icono del menu*/
+	margin: 5px;
+	color:#FFF;
+}
+.icon-menu{ /*propiedades para el simbolo del menu*/
+	display: block;
+	width: 40px;     /*ancho y alto del simbolo de menu*/
+	height: 40px;
+	font-size: 30px; /*tamaño del simbolo*/
+	background: #FBA919;
+	color: #FFF;
+	text-align: center; /*centrado del simbolo dentro del area definida por ancho y alto*/
+	line-height: 48px;
+	border-radius: 5px; /*redondeado de las esquinas*/
+	cursor: pointer; /*para convertir en boton el simbolo del menu*/
+}
+/*-----------------Estilos del menu-----------------*/
+.nav{
+	position: absolute; /*la ubicacion se da en relacion al primer elemento padre mas
+	                      cercano con un valor diferente static, en este caso se toma
+	                      como referencia la ventana del navegador, ya que no existe 
+	                      ninguno con valor diferente static*/
+	top: 60px;
+	left: -100%; /*para que se oculte (se va totalmente a la izquierda)*/
+	width: 100%; /*para que ocupe toda la ventana del navegador*/
+	transition: all 0.4s;
+}
+.menu{/*propiedades del menu (se eliminaran todos sus estilos)*/
+	list-style: none; /*elimina las viñetas*/
+	margin: 0;
+	padding: 0;
+}
+.menu__link{/*propiedades para las etiquetas anchor*/
+	text-decoration: none; /*para eliminar el subrayado de los textos del menu*/
+	display: block;
+	padding: 15px;
+	background: #FBA919;
+	color: #FFF;
+}
+.menu__link:hover{ /*propiedas para cuando se pasa el mouse sobre los textos del menus*/
+	background: #FFF;
+	color: #FBA919;
+}
+.mostrar{
+	left: 0; /*clase que se activa al siceder el evento de click sobre el simbolo de menu*/
+}
+.select{
+	background: #FFF;
+	color: #FBA919;
+}
+/*------------------Estilos del banner------------------*/
+.banner{
+	margin-top: 60px;
+	position: relative;
+	z-index: -1000; /*ajusta el orden de las capas de los objetos (orden de apilamiento)*/
+}
+.banner .contenedor{ /*tenemos que colocar el nombre de la clase padre, de no ser asi
+	                  se vera afectada la clase contenedor que se declaro al inicio*/
+	background: green;
+	position: absolute;
+	/*position: absolute;
+	color: #FFF;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);*/
+}
+.ejemplos .ejemplo__1{
+	border:none;
+	background: blue;
+}
+.banner__txt{
+	display: none;
+}
